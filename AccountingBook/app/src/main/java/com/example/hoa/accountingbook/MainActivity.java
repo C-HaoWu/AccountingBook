@@ -30,17 +30,14 @@ public class MainActivity extends AppCompatActivity implements ItemFragment.OnLi
         setContentView(R.layout.activity_main);
 
         DATE = (TextView) findViewById(R.id.date);
-        String dateToday = String.valueOf(calendar.get(Calendar.YEAR))+"-"+String.valueOf(calendar.get(Calendar.MONTH)+1)+"-"+String.valueOf(calendar.get(Calendar.DAY_OF_MONTH));
-        DATE.setText(dateToday);
+        setCalendar();
 
         PREVIOUS_DATE = (Button) findViewById(R.id.previous);
         PREVIOUS_DATE.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 calendar.add(Calendar.DAY_OF_MONTH, -1);
-                String dateToday = String.valueOf(calendar.get(Calendar.YEAR))+"-"+String.valueOf(calendar.get(Calendar.MONTH)+1)+"-"+String.valueOf(calendar.get(Calendar.DAY_OF_MONTH));
-                DATE.setText(dateToday);
-                onListFragmentInteraction();
+                setCalendar();
             }
         });
 
@@ -49,9 +46,7 @@ public class MainActivity extends AppCompatActivity implements ItemFragment.OnLi
             @Override
             public void onClick(View v) {
                 calendar.add(Calendar.DAY_OF_MONTH, 1);
-                String dateToday = String.valueOf(calendar.get(Calendar.YEAR))+"-"+String.valueOf(calendar.get(Calendar.MONTH)+1)+"-"+String.valueOf(calendar.get(Calendar.DAY_OF_MONTH));
-                DATE.setText(dateToday);
-                onListFragmentInteraction();
+                setCalendar();
             }
         });
     }
@@ -64,25 +59,26 @@ public class MainActivity extends AppCompatActivity implements ItemFragment.OnLi
         new DatePickerDialog(v.getContext(), new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int day) {
-                String dateTime = String.valueOf(year)+"-"+String.valueOf(month+1)+"-"+String.valueOf(day);
-                DATE.setText(dateTime);
                 calendar.set(year,month,day);
-                onListFragmentInteraction();
+                setCalendar();
             }
         }, year, month, day).show();
     }
 
+    public void setCalendar(){
+        String dateToday = String.valueOf(calendar.get(Calendar.YEAR))+"-"+String.valueOf(calendar.get(Calendar.MONTH)+1)+"-"+String.valueOf(calendar.get(Calendar.DAY_OF_MONTH));
+        DATE.setText(dateToday); //切換日期
+        onListFragmentInteraction(test); //切換Fragment
+    }
+
 
     @Override
-    public void onListFragmentInteraction() {
+    public void onListFragmentInteraction(DummyContent.DummyItem item) {
         ItemFragment itemFrag = (ItemFragment) getSupportFragmentManager().findFragmentById(R.id.fragment);
 
         if (itemFrag != null) {
             // If article frag is available, we're in two-pane layout...
             // Call a method in the ArticleFragment to update its content
-
-            //FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-            //transaction.detach(itemFrag).attach(itemFrag).commit();
             itemFrag.updateView();
         }
         else {

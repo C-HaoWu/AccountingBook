@@ -124,10 +124,17 @@ public class ItemFragment extends Fragment {
      */
     public interface OnListFragmentInteractionListener {
         // TODO: Update argument type and name
-        void onListFragmentInteraction();
+        void onListFragmentInteraction(DummyContent.DummyItem item);
     }
 
     public void updateView() {
+//        TextView article = (TextView) getActivity().findViewById(R.id.article);
+//        article.setText(Ipsum.Articles[position]);
+//        mCurrentPosition = position;
+
+        //mContent = new DummyContent();
+        //mContent.day = item;
+        //mAdapter.notifyDataSetChanged();
 
     }
 }
