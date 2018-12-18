@@ -16,46 +16,47 @@ import java.util.Map;
  * TODO: Replace all uses of this class before publishing your app.
  */
 public class DummyContent {
-    public static int day ;
 
     /**
      * An array of sample (dummy) items.
      */
-    public static final List<DummyItem> ITEMS = new ArrayList<DummyItem>();
+    public List<DummyItem> ITEMS = new ArrayList<DummyItem>();
 
     /**
      * A map of sample (dummy) items, by ID.
      */
-    public static final Map<String, DummyItem> ITEM_MAP = new HashMap<String, DummyItem>();
+    public Map<String, DummyItem> ITEM_MAP = new HashMap<String, DummyItem>();
 
-    private static final int COUNT = 5;
-//    private static final int COUNT = day%10;
+    private int COUNT = 5; //資料量
 
-    static {
-        // Add some sample items.
+    // TODO: 建立 List
+    {
         for (int i = 1; i <= COUNT; i++) {
-            addItem(createDummyItem(day));
+            addItem(createDummyItem(i));
         }
     }
 
-    private static void addItem(DummyItem item) {
+    private void addItem(DummyItem item) {
         ITEMS.add(item);
         ITEM_MAP.put(item.id, item);
     }
 
+    // TODO:  抓資料庫內容
     private static DummyItem createDummyItem(int position) {
+        String id = String.valueOf(position); //ID
+        String date = MainActivity.dateToday; //日期
+        if(date == null){
+            date = "2018-12-17";
+        }
+        String content = "食物 " + position; //分類
+        //String details = makeDetails(position); //內容
+        String details = "早餐 " + position; //內容
+        String cost = "$" + position*20; //金額
 
-        int test = MainActivity.calendar.get(Calendar.DAY_OF_MONTH);
-        //String id = String.valueOf(position);
-        String id = String.valueOf(test);
-        String content = "Item " + position;
-        String details = makeDetails(position);
-        String cost = "$" + position;
-
-        return new DummyItem(id, content, details, cost);
+        return new DummyItem(id, date, content, details, cost);
     }
 
-    //TODO: 抓項目
+    // TODO: 可以不用
     private static String makeDetails(int position) {
         StringBuilder builder = new StringBuilder();
         builder.append("Details about Item: ").append(position);
@@ -70,12 +71,14 @@ public class DummyContent {
      */
     public static class DummyItem {
         public final String id;
+        public final String date;
         public final String content;
         public final String details;
         public final String cost;
 
-        public DummyItem(String id, String content, String details, String cost) {
+        public DummyItem(String id, String date, String content, String details, String cost) {
             this.id = id;
+            this.date = date;
             this.content = content;
             this.details = details;
             this.cost = cost;

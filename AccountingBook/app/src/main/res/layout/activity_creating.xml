@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CreatingActivity">
+
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal">
+
+            <Button
+                android:id="@+id/food"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="食物"
+                android:textSize="24sp" />
+
+            <Button
+                android:id="@+id/traffic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="交通"
+                android:textSize="24sp" />
+
+            <Button
+                android:id="@+id/clothes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="服飾"
+                android:textSize="24sp" />
+
+            <Button
+                android:id="@+id/life"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="生活"
+                android:textSize="24sp" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal">
+
+            <Button
+                android:id="@+id/entertiment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="育樂"
+                android:textSize="24sp" />
+
+            <Button
+                android:id="@+id/ccc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3C"
+                android:textSize="24sp" />
+
+            <Button
+                android:id="@+id/medicine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="醫藥"
+                android:textSize="24sp" />
+
+            <Button
+                android:id="@+id/others"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="其他"
+                android:textSize="24sp" />
+        </TableRow>
+
+    </TableLayout>
+
+    <TableLayout
+        android:id="@+id/tableLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableLayout">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingRight="16dp"
+                android:text="日期"
+                android:textSize="36sp" />
+
+            <TextView
+                android:id="@+id/create_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2018-02-28"
+                android:textSize="24sp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingRight="16dp"
+                android:text="類型"
+                android:textSize="36sp" />
+
+            <TextView
+                android:id="@+id/create_category"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="食物"
+                android:textSize="24sp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingRight="16dp"
+                android:text="內容"
+                android:textSize="36sp" />
+
+            <EditText
+                android:id="@+id/create_item"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="早餐"
+                android:textSize="18sp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingRight="16dp"
+                android:text="金額"
+                android:textSize="36sp" />
+
+            <EditText
+                android:id="@+id/create_cost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="number"
+                android:text="$ 55" />
+
+        </TableRow>
+    </TableLayout>
+
+    <Button
+        android:id="@+id/add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="8dp"
+        android:text="ADD"
+        app:layout_constraintEnd_toEndOf="@+id/tableLayout2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableLayout2" />
+
+</android.support.constraint.ConstraintLayout>

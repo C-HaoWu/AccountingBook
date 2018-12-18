@@ -30,14 +30,12 @@ public class ItemFragment extends Fragment {
     // TODO: Customize parameters
     private int mColumnCount = 1;
     private OnListFragmentInteractionListener mListener;
-    //public DummyContent mContent;
-
-    //public MyItemRecyclerViewAdapter mAdapter = new MyItemRecyclerViewAdapter(mContent.ITEMS, mListener);
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
      * fragment (e.g. upon screen orientation changes).
      */
+
     public ItemFragment() {
     }
 
@@ -50,6 +48,7 @@ public class ItemFragment extends Fragment {
         fragment.setArguments(args);
         return fragment;
     }
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -75,13 +74,10 @@ public class ItemFragment extends Fragment {
             else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            //recyclerView.setAdapter(new MyItemRecyclerViewAdapter(DummyContent.ITEMS, mListener));
-
             DummyContent mContent = new DummyContent();
-            mContent.day = MainActivity.calendar.get(Calendar.DAY_OF_MONTH) ;
-            MyItemRecyclerViewAdapter mAdapter = new MyItemRecyclerViewAdapter(mContent.ITEMS, mListener);
-            recyclerView.setAdapter(mAdapter);
-            mAdapter.notifyDataSetChanged();
+            recyclerView.setAdapter(new MyItemRecyclerViewAdapter(mContent.ITEMS, mListener));
+
+
         }
         String dateToday = String.valueOf(MainActivity.calendar.get(Calendar.YEAR))+"-"+String.valueOf(MainActivity.calendar.get(Calendar.MONTH)+1)+"-"+String.valueOf(MainActivity.calendar.get(Calendar.DAY_OF_MONTH));
         Toast.makeText(getActivity(), "Update" +dateToday , Toast.LENGTH_SHORT).show();
@@ -127,14 +123,4 @@ public class ItemFragment extends Fragment {
         void onListFragmentInteraction(DummyContent.DummyItem item);
     }
 
-    public void updateView() {
-//        TextView article = (TextView) getActivity().findViewById(R.id.article);
-//        article.setText(Ipsum.Articles[position]);
-//        mCurrentPosition = position;
-
-        //mContent = new DummyContent();
-        //mContent.day = item;
-        //mAdapter.notifyDataSetChanged();
-
-    }
 }

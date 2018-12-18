@@ -29,15 +29,15 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.fragment_item, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_item, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.mItem = mValues.get(position);
-        holder.mIdView.setText(mValues.get(position).id);
+        //holder.mIdView.setText(mValues.get(position).id);
+        holder.mDateView.setText(mValues.get(position).date);
         holder.mContentView.setText(mValues.get(position).content);
         holder.mDetailsView.setText(mValues.get(position).details);
         holder.mCostView.setText(mValues.get(position).cost);
@@ -61,7 +61,8 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         public final View mView;
-        public final TextView mIdView;
+        //public final TextView mIdView;
+        public final TextView mDateView;
         public final TextView mContentView;
         public final TextView mDetailsView;
         public final TextView mCostView;
@@ -70,7 +71,8 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
         public ViewHolder(View view) {
             super(view);
             mView = view;
-            mIdView = (TextView) view.findViewById(R.id.item_number);
+            //mIdView ;= (TextView) view.findViewById(R.id.item_number);
+            mDateView = (TextView) view.findViewById(R.id.item_number);
             mContentView = (TextView) view.findViewById(R.id.content);
             mDetailsView = (TextView) view.findViewById(R.id.details);
             mCostView = (TextView) view.findViewById(R.id.cost);
