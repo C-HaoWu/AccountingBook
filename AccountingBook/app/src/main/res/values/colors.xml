@@ -7,4 +7,14 @@
     <color name="primary_dark_material_dark">#000000</color>
     <color name="accent_material_dark">#80cbc4</color>
     <color name="background_material_dark">#303030</color>
+
+    <color name="chart_color_food">#E7655A</color>
+    <color name="chart_color_traffic">#56e6d2</color>
+    <color name="chart_color_clothes">#56a3e6</color>
+    <color name="chart_color_life">#4dca5c</color>
+    <color name="chart_color_entertainment">#F6CE5D</color>
+    <color name="chart_color_ccc">#ac5ae7</color>
+    <color name="chart_color_medicine">#BAE6FB</color>
+    <color name="chart_color_others">#576F86</color>
+
 </resources>

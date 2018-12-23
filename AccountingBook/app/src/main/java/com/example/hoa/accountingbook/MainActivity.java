@@ -3,6 +3,7 @@ package com.example.hoa.accountingbook;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.icu.util.Calendar;
+import android.net.Uri;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -16,7 +17,7 @@ import com.example.hoa.accountingbook.dummy.DummyContent;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements ItemFragment.OnListFragmentInteractionListener {
+public class MainActivity extends AppCompatActivity implements ItemFragment.OnListFragmentInteractionListener, ChartFragment.OnFragmentInteractionListener {
 
     private TextView DATE;
     private Button PREVIOUS_DATE;
@@ -31,6 +32,7 @@ public class MainActivity extends AppCompatActivity implements ItemFragment.OnLi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        onFragmentInteraction();
 
         DATE = (TextView) findViewById(R.id.date);
         setCalendar();
@@ -88,6 +90,15 @@ public class MainActivity extends AppCompatActivity implements ItemFragment.OnLi
         ItemFragment newFragment = new ItemFragment();
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.fragment_container, newFragment, "LIST");
+        transaction.addToBackStack(null);
+        transaction.commit();
+    }
+
+    @Override
+    public void onFragmentInteraction() {
+        ChartFragment newFragment = new ChartFragment();
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.chartfrag_container, newFragment, "CHART");
         transaction.addToBackStack(null);
         transaction.commit();
     }

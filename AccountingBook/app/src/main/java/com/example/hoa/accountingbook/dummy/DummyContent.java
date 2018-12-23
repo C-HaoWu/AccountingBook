@@ -48,7 +48,7 @@ public class DummyContent {
         if(date == null){
             date = "2018-12-17";
         }
-        String content = "食物 " + position; //分類
+        String content = "食物 "; //分類
         //String details = makeDetails(position); //內容
         String details = "早餐 " + position; //內容
         String cost = "$" + position*20; //金額

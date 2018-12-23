@@ -76,11 +76,7 @@ public class ItemFragment extends Fragment {
             }
             DummyContent mContent = new DummyContent();
             recyclerView.setAdapter(new MyItemRecyclerViewAdapter(mContent.ITEMS, mListener));
-
-
         }
-        String dateToday = String.valueOf(MainActivity.calendar.get(Calendar.YEAR))+"-"+String.valueOf(MainActivity.calendar.get(Calendar.MONTH)+1)+"-"+String.valueOf(MainActivity.calendar.get(Calendar.DAY_OF_MONTH));
-        Toast.makeText(getActivity(), "Update" +dateToday , Toast.LENGTH_SHORT).show();
         return view;
     }
 

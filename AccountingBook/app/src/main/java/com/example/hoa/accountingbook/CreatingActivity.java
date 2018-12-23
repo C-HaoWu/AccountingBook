@@ -31,7 +31,7 @@ public class CreatingActivity extends AppCompatActivity {
 
     public void setButtonClick(){
         TEXT_CATEGORY = (TextView) findViewById(R.id.create_category);
-        final List<Integer> ButtonList = Arrays.asList(R.id.food, R.id.traffic, R.id.clothes, R.id.life, R.id.entertiment, R.id.ccc, R.id.medicine, R.id.others);
+        final List<Integer> ButtonList = Arrays.asList(R.id.food, R.id.traffic, R.id.clothes, R.id.life, R.id.entertainment, R.id.ccc, R.id.medicine, R.id.others);
 
         View.OnClickListener chooseContent = new View.OnClickListener() {
             @Override
@@ -49,7 +49,7 @@ public class CreatingActivity extends AppCompatActivity {
                     case R.id.life:
                         TEXT_CATEGORY.setText("生活");
                         break;
-                    case R.id.entertiment:
+                    case R.id.entertainment:
                         TEXT_CATEGORY.setText("育樂");
                         break;
                     case R.id.ccc:
