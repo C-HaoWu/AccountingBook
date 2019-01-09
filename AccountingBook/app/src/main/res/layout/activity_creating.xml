@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorAccent4"
     tools:context=".CreatingActivity">
 
     <TableLayout
         android:id="@+id/tableLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -18,35 +18,33 @@
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
             android:gravity="center_horizontal">
 
-            <Button
+            <ImageView
                 android:id="@+id/food"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="食物"
-                android:textSize="24sp" />
+                android:layout_width="96dp"
+                android:layout_height="72dp"
+                app:srcCompat="@drawable/food" />
 
-            <Button
+            <ImageView
                 android:id="@+id/traffic"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="交通"
-                android:textSize="24sp" />
+                android:layout_width="96dp"
+                android:layout_height="72dp"
+                android:textSize="24sp"
+                app:srcCompat="@drawable/traffic" />
 
-            <Button
+            <ImageView
                 android:id="@+id/clothes"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="服飾"
-                android:textSize="24sp" />
+                android:layout_width="96dp"
+                android:layout_height="72dp"
+                app:srcCompat="@drawable/clothes" />
 
-            <Button
+            <ImageView
                 android:id="@+id/life"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="生活"
-                android:textSize="24sp" />
+                android:layout_width="96dp"
+                android:layout_height="72dp"
+                app:srcCompat="@drawable/life" />
 
         </TableRow>
 
@@ -55,33 +53,29 @@
             android:layout_height="match_parent"
             android:gravity="center_horizontal">
 
-            <Button
+            <ImageView
                 android:id="@+id/entertainment"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="育樂"
-                android:textSize="24sp" />
+                android:layout_width="96dp"
+                android:layout_height="72dp"
+                app:srcCompat="@drawable/entertiament" />
 
-            <Button
+            <ImageView
                 android:id="@+id/ccc"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="3C"
-                android:textSize="24sp" />
+                android:layout_width="96dp"
+                android:layout_height="72dp"
+                app:srcCompat="@drawable/ccc" />
 
-            <Button
+            <ImageView
                 android:id="@+id/medicine"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="醫藥"
-                android:textSize="24sp" />
+                android:layout_width="96dp"
+                android:layout_height="72dp"
+                app:srcCompat="@drawable/medicine" />
 
-            <Button
+            <ImageView
                 android:id="@+id/others"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="其他"
-                android:textSize="24sp" />
+                android:layout_width="96dp"
+                android:layout_height="72dp"
+                app:srcCompat="@drawable/others" />
         </TableRow>
 
     </TableLayout>
@@ -90,7 +84,9 @@
         android:id="@+id/tableLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_margin="24dp"
+        android:background="@color/colorAccent5"
+        android:padding="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tableLayout">
@@ -104,14 +100,19 @@
                 android:id="@+id/textView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingRight="16dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="16dp"
+                android:gravity="center_vertical"
                 android:text="日期"
-                android:textSize="36sp" />
+                android:textSize="30sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/create_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
                 android:text="2018-02-28"
                 android:textSize="24sp" />
         </TableRow>
@@ -125,14 +126,19 @@
                 android:id="@+id/textView2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingRight="16dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="16dp"
+                android:gravity="center_vertical"
                 android:text="類型"
-                android:textSize="36sp" />
+                android:textSize="30sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/create_category"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
                 android:text="食物"
                 android:textSize="24sp" />
         </TableRow>
@@ -146,9 +152,12 @@
                 android:id="@+id/textView3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingRight="16dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="16dp"
+                android:gravity="center_vertical"
                 android:text="內容"
-                android:textSize="36sp" />
+                android:textSize="30sp"
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/create_item"
@@ -169,9 +178,12 @@
                 android:id="@+id/textView4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingRight="16dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="16dp"
+                android:gravity="center_vertical"
                 android:text="金額"
-                android:textSize="36sp" />
+                android:textSize="30sp"
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/create_cost"
@@ -184,16 +196,14 @@
         </TableRow>
     </TableLayout>
 
-    <Button
+    <ImageView
         android:id="@+id/add"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="8dp"
-        android:text="ADD"
-        app:layout_constraintEnd_toEndOf="@+id/tableLayout2"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tableLayout2" />
+        app:layout_constraintTop_toBottomOf="@+id/tableLayout2"
+        app:srcCompat="@drawable/add" />
 
 </android.support.constraint.ConstraintLayout>

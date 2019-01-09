@@ -44,9 +44,11 @@ public class DummyContent {
     // TODO:  抓資料庫內容
     private static DummyItem createDummyItem(int position) {
         String id = String.valueOf(position); //ID
-        String date = MainActivity.dateToday; //日期
+        // String date = MainActivity.dateToday; //日期
+        Calendar calendar = MainActivity.calendar;
+        String date = String.valueOf(calendar.get(Calendar.DAY_OF_MONTH)); //日期
         if(date == null){
-            date = "2018-12-17";
+            date = "17";
         }
         String content = "食物 "; //分類
         //String details = makeDetails(position); //內容

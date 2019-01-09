@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.Arrays;
@@ -15,7 +16,6 @@ public class CreatingActivity extends AppCompatActivity {
     private TextView TEXT_CATEGORY;
     private TextView TEXT_ITEM;
     private TextView TEXT_COST;
-    private Button Btn_ADD;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +44,7 @@ public class CreatingActivity extends AppCompatActivity {
                         TEXT_CATEGORY.setText("交通");
                         break;
                     case R.id.clothes:
-                        TEXT_CATEGORY.setText("衣服");
+                        TEXT_CATEGORY.setText("服飾");
                         break;
                     case R.id.life:
                         TEXT_CATEGORY.setText("生活");
@@ -70,8 +70,8 @@ public class CreatingActivity extends AppCompatActivity {
     }
 
     public void addClick(){
-        Btn_ADD = (Button) findViewById(R.id.add);
-        Btn_ADD.setOnClickListener(new View.OnClickListener() {
+        ImageView btn_ADD = (ImageView) findViewById(R.id.add);
+        btn_ADD.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String date1 = String.valueOf(TEXT_DATE.getText());
