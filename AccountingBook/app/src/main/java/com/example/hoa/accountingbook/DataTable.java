@@ -40,7 +40,7 @@ public class DataTable {
                     DATE_COLUMN + " TEXT NOT NULL, " +
                     CONTENT_COLUMN + " TEXT NOT NULL, " +
                     DETAILS_COLUMN + " TEXT, " +
-                    COST_COLUMN + " REAL) " ;
+                    COST_COLUMN + " INTEGER) " ;
 
 
     // 關閉資料庫，一般的應用都不需要修改
@@ -103,21 +103,30 @@ public class DataTable {
     }
 
     //依照類別分類資料
-    public static List<BarEntry> Category_Cost(){
+    public static List<Integer> Category_Cost(){
         List<BarEntry> chartData = new ArrayList<>();
+        List<Integer>costlist = new ArrayList<>();
 
         String date = MainActivity.dateToday;
         String queryByDate = DATE_COLUMN + "= '" + date+"' ";
 
-        Cursor cursor = db.query(
-                TABLE_NAME, null, queryByDate, null, CONTENT_COLUMN, null, null, null);
+//        Cursor cursor = db.query(
+//                TABLE_NAME, null, queryByDate, null, CONTENT_COLUMN, null, null, null);
+
+        Cursor cursor = db.rawQuery(
+                "SELECT " + CONTENT_COLUMN + ", SUM( " + COST_COLUMN + ") " +
+                        " FROM " + TABLE_NAME +
+                        " WHERE " + queryByDate +
+                        " GROUP BY " + CONTENT_COLUMN,
+                null
+        );
 
         while (cursor.moveToNext()) {
-            //result.add(getRecord(cursor));
+            costlist.add(cursor.getInt(1));
         }
         cursor.close();
 
-        return chartData;
+        return costlist;
     }
 
     // 把Cursor目前的資料包裝為物件
@@ -128,12 +137,8 @@ public class DataTable {
                 cursor.getString(1),
                 cursor.getString(2),
                 cursor.getString(3),
-                cursor.getDouble(4));
+                cursor.getInt(4));
         // 回傳結果
         return result;
     }
-
-
-
-
 }

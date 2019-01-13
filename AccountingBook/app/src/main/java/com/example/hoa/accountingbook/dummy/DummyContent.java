@@ -8,9 +8,9 @@ public class DummyContent {
         public String date;
         public String content;
         public String details;
-        public double cost;
+        public int cost;
 
-        public DummyItem(long id, String date, String content, String details, double cost) {
+        public DummyItem(long id, String date, String content, String details, int cost) {
             this.id = id;
             this.date = date;
             this.content = content;

@@ -142,8 +142,10 @@ public class ChartFragment extends Fragment {
     private List<BarEntry> getChartData(){
         int DATA_COUNT = 8;
         List<BarEntry> chartData = new ArrayList<>();
-        for(int i=0;i<DATA_COUNT;i++){
-            chartData.add(new BarEntry(i, (10-i)*100));
+//        List<Integer> costlist = DataTable.Category_Cost();
+        List<Integer> costlist = new ArrayList<>();
+        for(int i = 0; i < costlist.size(); i++){
+            chartData.add(new BarEntry(i, costlist.get(i)));
         }
         return chartData;
     }

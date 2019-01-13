@@ -93,7 +93,7 @@ public class CreatingActivity extends AppCompatActivity {
                 String date1 = String.valueOf(TEXT_DATE.getText());
                 String category1 = String.valueOf(TEXT_CATEGORY.getText());
                 String item1 = String.valueOf(TEXT_ITEM.getText());
-                double cost1 = Double.parseDouble(TEXT_COST.getText().toString());
+                int cost1 = Integer.parseInt(TEXT_COST.getText().toString());
 
                 DummyContent.DummyItem newItem = new DummyContent.DummyItem(0, date1, category1, item1, cost1);
                 DataTable.Insert(newItem);
@@ -122,7 +122,7 @@ public class CreatingActivity extends AppCompatActivity {
                 String date1 = String.valueOf(TEXT_DATE.getText());
                 String category1 = String.valueOf(TEXT_CATEGORY.getText());
                 String item1 = String.valueOf(TEXT_ITEM.getText());
-                double cost1 = Double.parseDouble(TEXT_COST.getText().toString());
+                int cost1 = Integer.parseInt(TEXT_COST.getText().toString());
 
                 DummyContent.DummyItem newItem = new DummyContent.DummyItem(ITEM.id, date1, category1, item1, cost1);
                 DataTable.Update(newItem);
