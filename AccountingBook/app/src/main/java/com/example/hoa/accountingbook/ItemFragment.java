@@ -74,8 +74,14 @@ public class ItemFragment extends Fragment {
             else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            DummyContent mContent = new DummyContent();
-            recyclerView.setAdapter(new MyItemRecyclerViewAdapter(mContent.ITEMS, mListener));
+
+            DataTable mData = new DataTable(context);
+            recyclerView.setAdapter(new MyItemRecyclerViewAdapter(mData.getData(), mListener));
+
+//            if(mData.getData().size() == 0){
+//                DummyContent mContent = new DummyContent();
+//                recyclerView.setAdapter(new MyItemRecyclerViewAdapter(mContent.ITEMS, mListener));
+//            }
         }
         return view;
     }
